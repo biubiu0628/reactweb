@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Bg1 from "../../images/bg1.svg";
 import Logo from "../../images/Logo.svg";
@@ -26,7 +27,8 @@ import Login2 from "../../images/login2.svg";
 import Login3 from "../../images/login3.svg";
 import Capcha from "../../images/capcha.svg";
 
-const signup = () => {
+const Signup = () => {
+  const [clickCS, setClickCS] = useState(false);
   return (
     <div>
       <div className="relative bg-gradient-to-r from-[#EF586B] to-[#D9112A] h-full ">
@@ -43,8 +45,49 @@ const signup = () => {
               </Link>
               <button className="text-white py-6 px-4">GIỚI THIỆU</button>
               <button className="text-white py-6 px-4">BẢNG GIÁ</button>
-              <button className="text-white py-6 px-4">CHÍNH SÁCH</button>
-              <button className="text-white py-6 px-4">TIN TỨC</button>
+              <div className="relative">
+                <button
+                  className="text-white py-6 px-4"
+                  type="button"
+                  id="menu-button-cs"
+                  aria-haspopup="true"
+                  onClick={() => setClickCS(!clickCS)}
+                >
+                  CHÍNH SÁCH
+                </button>
+                <div
+                  class={`absolute z-10 mt-2 w-[160px] origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${
+                    clickCS ? "" : "hidden"
+                  }`}
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button-cs"
+                  tabindex="-1"
+                  style={{
+                    top: "calc(100% + 0.5rem)",
+                    left: "50%",
+                    transform: "translateX(-70%)",
+                  }}
+                >
+                  <div
+                    className="py-2 flex flex-col px-2 w-[160px] h-full relative z-10"
+                    role="none"
+                  >
+                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                      Chính sách 1
+                    </button>
+                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                      Chính sách 2
+                    </button>
+                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                      Chính sách 3
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <Link to="/tintuc" className="text-white py-6 px-4">
+                TIN TỨC
+              </Link>
               <button className="text-white py-6 px-4">NHƯỢNG QUYỀN</button>
               <button className="text-white py-6 px-4">HỖ TRỢ</button>
             </div>
@@ -381,4 +424,4 @@ const signup = () => {
   );
 };
 
-export default signup;
+export default Signup;
