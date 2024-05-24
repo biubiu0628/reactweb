@@ -38,7 +38,7 @@ const Login = () => {
         <header>
           <div className="sticky flex items-center justify-between pt-4 z-40 px-32">
             <img src={Logo} alt="" />
-            <div className="text-white">
+            <div className="text-white flex">
               <Link to="/" className="text-white py-6 px-4">
                 TRANG CHỦ
               </Link>
