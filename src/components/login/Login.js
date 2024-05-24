@@ -57,8 +57,8 @@ const login = () => {
         </header>
         {/*  */}
         <div className="bg-white px-32 z-20 relative py-4">
-          <div className="flex gap-4">
-            <div className="flex">
+          <div className="flex gap-4 ">
+            <div className="flex items-center">
               <Link to="/">
                 <img src={Home} alt="" />
               </Link>

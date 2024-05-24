@@ -56,9 +56,10 @@ const signup = () => {
             </Link>
           </div>
         </header>
+        {/*  */}
         <div className="bg-white px-32 z-20 relative py-4">
           <div className="flex gap-4">
-            <div className="flex">
+            <div className="flex items-center">
               <Link to="/">
                 <img src={Home} alt="" />
               </Link>
@@ -174,7 +175,6 @@ const signup = () => {
                   <div className="flex gap-2">
                     <img src={Lock} alt="" />
                     <input
-                      type="password"
                       placeholder="Khu vực"
                       className="bg-[#FAFAFA] focus:outline-none w-full"
                     ></input>
@@ -262,7 +262,7 @@ const signup = () => {
           <div className="grid grid-cols-3 gap-20 ">
             <div className="bg-gradient-to-r from-[#EF586B] to-[#D9112A] rounded-xl text-white p-8 w-[380px]">
               <img src={Login1} alt="" />
-              <p className="text-[20px]">Về SuperShip</p>
+              <p className="text-[20px] py-4">Về SuperShip</p>
               <p className="underline">Giới Thiệu</p>
               <p className="underline">Mạng Lưới</p>
               <p className="underline">Tin Tức</p>
@@ -271,7 +271,7 @@ const signup = () => {
             </div>
             <div className="rounded-xl shadow text-[#5C6A70] p-8 bg-white">
               <img src={Login2} alt="" />
-              <p className="text-[#F53D4F] text-[20px]">Chính sách</p>
+              <p className="text-[#F53D4F] text-[20px] py-4">Chính sách</p>
               <p className="underline">Chính Sách Bồi Thường</p>
               <p className="underline">Quy Định Về Khiếu Nại</p>
               <p className="underline">Chính Sách Hỗ Trợ</p>
@@ -280,7 +280,9 @@ const signup = () => {
             </div>
             <div className="rounded-xl shadow text-[#5C6A70] p-8 bg-white">
               <img src={Login3} alt="" />
-              <p className="text-[#F53D4F] text-[20px]">Thông tin dịch vụ</p>
+              <p className="text-[#F53D4F] text-[20px] py-4">
+                Thông tin dịch vụ
+              </p>
               <p className="underline">Bảng Giá Dịch Vụ</p>
               <p className="underline">Quy Định Hàng Hóa</p>
               <p className="underline">Hàng Hóa Không Vận Chuyển</p>
