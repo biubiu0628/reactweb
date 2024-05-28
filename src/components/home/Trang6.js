@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../images/Logo.svg";
 import Gg from "../../images/Google.svg";
 import Apple from "../../images/Apple.svg";
@@ -120,9 +121,12 @@ const Trang6 = () => {
             </div>
           </div>
           <div className="fixed bottom-12 right-6 flex flex-col gap-6">
-            <button className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center">
+            <Link
+              to="/hotro"
+              className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center"
+            >
               <img src={M1} alt="" />
-            </button>
+            </Link>
             <button className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center">
               <img src={M2} alt="" className="w-[40px] h-[40px]" />
             </button>

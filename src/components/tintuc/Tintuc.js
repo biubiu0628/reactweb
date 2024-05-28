@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../images/Logo.svg";
 import Home from "../../images/home.svg";
+import Thumuc from "../../images/thumuc.svg";
 import New1 from "../../images/new1.svg";
 import New2 from "../../images/new2.svg";
 import New3 from "../../images/new3.svg";
@@ -61,7 +62,7 @@ const Tintuc = () => {
                   aria-labelledby="menu-button-cs"
                   tabindex="-1"
                   style={{
-                    top: "calc(100% + 0.5rem)",
+                    top: "calc(80% + 0.5rem)",
                     left: "50%",
                     transform: "translateX(-70%)",
                   }}
@@ -70,15 +71,24 @@ const Tintuc = () => {
                     className="py-2 flex flex-col px-2 w-[160px] h-full relative z-10"
                     role="none"
                   >
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 1
-                    </button>
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    </Link>
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 2
-                    </button>
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    </Link>
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 3
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -190,20 +200,7 @@ const Tintuc = () => {
               </p>
             </div>
             <Link to="/tintuc" className="flex gap-2 px-4 text-[#f53d4f]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 0 0-1.883 2.542l.857 6a2.25 2.25 0 0 0 2.227 1.932H19.05a2.25 2.25 0 0 0 2.227-1.932l.857-6a2.25 2.25 0 0 0-1.883-2.542m-16.5 0V6A2.25 2.25 0 0 1 6 3.75h3.879a1.5 1.5 0 0 1 1.06.44l2.122 2.12a1.5 1.5 0 0 0 1.06.44H18A2.25 2.25 0 0 1 20.25 9v.776"
-                />
-              </svg>
+              <img src={Thumuc} alt="" />
               Tin tức
             </Link>
           </div>
@@ -474,9 +471,12 @@ const Tintuc = () => {
             </div>
           </div>
           <div className="fixed bottom-12 right-6 flex flex-col gap-6">
-            <button className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center">
+            <Link
+              to="/hotro"
+              className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center"
+            >
               <img src={M1} alt="" />
-            </button>
+            </Link>
             <button className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center">
               <img src={M2} alt="" className="w-[40px] h-[40px]" />
             </button>

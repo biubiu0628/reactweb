@@ -43,7 +43,7 @@ const Trang1 = () => {
                   aria-labelledby="menu-button-cs"
                   tabindex="-1"
                   style={{
-                    top: "calc(100% + 0.5rem)",
+                    top: "calc(80% + 0.5rem)",
                     left: "50%",
                     transform: "translateX(-70%)",
                   }}
@@ -52,15 +52,24 @@ const Trang1 = () => {
                     className="py-2 flex flex-col px-2 w-[160px] h-full relative z-10"
                     role="none"
                   >
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 1
-                    </button>
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    </Link>
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 2
-                    </button>
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    </Link>
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 3
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

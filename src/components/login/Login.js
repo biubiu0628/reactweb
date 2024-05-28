@@ -36,7 +36,7 @@ const Login = () => {
         </div>
         {/* header */}
         <header>
-          <div className="sticky flex items-center justify-between pt-4 z-40 px-32">
+          <div className="sticky flex items-center justify-between pt-4 z-30 px-32">
             <img src={Logo} alt="" />
             <div className="text-white flex">
               <Link to="/" className="text-white py-6 px-4">
@@ -63,7 +63,7 @@ const Login = () => {
                   aria-labelledby="menu-button-cs"
                   tabindex="-1"
                   style={{
-                    top: "calc(100% + 0.5rem)",
+                    top: "calc(80% + 0.5rem)",
                     left: "50%",
                     transform: "translateX(-70%)",
                   }}
@@ -72,15 +72,24 @@ const Login = () => {
                     className="py-2 flex flex-col px-2 w-[160px] h-full relative z-10"
                     role="none"
                   >
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 1
-                    </button>
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    </Link>
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 2
-                    </button>
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    </Link>
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 3
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -88,7 +97,9 @@ const Login = () => {
                 TIN TỨC
               </Link>
               <button className="text-white py-6 px-4">NHƯỢNG QUYỀN</button>
-              <button className="text-white py-6 px-4">HỖ TRỢ</button>
+              <Link to="/hotro" className="text-white py-6 px-4">
+                HỖ TRỢ
+              </Link>
             </div>
             <Link
               to="/signup"
@@ -150,9 +161,9 @@ const Login = () => {
               </button>
             </div>
             <div className="flex justify-center items-center gap-4 py-10">
-              <hr className="w-[380px]" />
+              <hr className="w-[360px]" />
               <p className="text-[#5C6A70] font-thin">Hoặc đăng nhập với</p>
-              <hr className="w-[380px]" />
+              <hr className="w-[360px]" />
             </div>
             <div className="flex flex-col gap-2">
               <div className="flex rounded-xl bg-[#FAFAFA] border-solid border-[1px] border-l-4 py-4 border-l-[#f53d4f] px-4 gap-2">
@@ -303,10 +314,13 @@ const Login = () => {
               <img src={Tb} alt="" />
             </div>
           </div>
-          <div className="fixed bottom-12 right-6 flex flex-col gap-6">
-            <button className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center">
+          <div className="fixed bottom-12 right-6 flex flex-col gap-6 z-30">
+            <Link
+              to="/hotro"
+              className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center"
+            >
               <img src={M1} alt="" />
-            </button>
+            </Link>
             <button className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center">
               <img src={M2} alt="" />
             </button>

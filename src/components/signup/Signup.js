@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 import Bg1 from "../../images/bg1.svg";
 import Logo from "../../images/Logo.svg";
 import Bg2 from "../../images/bg2.svg";
@@ -25,10 +26,12 @@ import M3 from "../../images/mess3.svg";
 import Login1 from "../../images/login1.svg";
 import Login2 from "../../images/login2.svg";
 import Login3 from "../../images/login3.svg";
-import Capcha from "../../images/capcha.svg";
 
 const Signup = () => {
   const [clickCS, setClickCS] = useState(false);
+  const [clickKV, setClickKV] = useState(false);
+
+  const onChange = () => {};
   return (
     <div>
       <div className="relative bg-gradient-to-r from-[#EF586B] to-[#D9112A] h-full ">
@@ -37,7 +40,7 @@ const Signup = () => {
         </div>
         {/* header */}
         <header>
-          <div className="sticky flex items-center justify-between pt-4 z-40 px-32">
+          <div className="sticky flex items-center justify-between pt-4 z-30 px-32">
             <img src={Logo} alt="" />
             <div className="text-white flex">
               <Link to="/" className="text-white py-6 px-4">
@@ -64,7 +67,7 @@ const Signup = () => {
                   aria-labelledby="menu-button-cs"
                   tabindex="-1"
                   style={{
-                    top: "calc(100% + 0.5rem)",
+                    top: "calc(80% + 0.5rem)",
                     left: "50%",
                     transform: "translateX(-70%)",
                   }}
@@ -73,15 +76,24 @@ const Signup = () => {
                     className="py-2 flex flex-col px-2 w-[160px] h-full relative z-10"
                     role="none"
                   >
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 1
-                    </button>
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    </Link>
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 2
-                    </button>
-                    <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                    </Link>
+                    <Link
+                      to="/Cs"
+                      className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]"
+                    >
                       Chính sách 3
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -89,7 +101,9 @@ const Signup = () => {
                 TIN TỨC
               </Link>
               <button className="text-white py-6 px-4">NHƯỢNG QUYỀN</button>
-              <button className="text-white py-6 px-4">HỖ TRỢ</button>
+              <Link to="/hotro" className="text-white py-6 px-4">
+                HỖ TRỢ
+              </Link>
             </div>
             <Link
               to="/login"
@@ -100,7 +114,7 @@ const Signup = () => {
           </div>
         </header>
         {/*  */}
-        <div className="bg-white px-32 z-20 relative py-4">
+        <div className="bg-white px-32 z-10 relative py-4">
           <div className="flex gap-4">
             <div className="flex items-center">
               <Link to="/">
@@ -151,9 +165,9 @@ const Signup = () => {
               </button>
             </div>
             <div className="flex justify-center items-center gap-4 py-10">
-              <hr className="w-[380px]" />
+              <hr className="w-[370px]" />
               <p className="text-[#5C6A70] font-thin">Hoặc đăng ký với</p>
-              <hr className="w-[380px]" />
+              <hr className="w-[370px]" />
             </div>
             <div className="grid grid-cols-2 text-center ">
               <div className="flex flex-col gap-3 pr-8 border-solid border-r-[1px]">
@@ -168,25 +182,28 @@ const Signup = () => {
                     type="text"
                     placeholder="Họ và tên"
                     className="bg-[#FAFAFA] focus:outline-none w-full"
+                    required
                   ></input>
                 </div>
                 {/* Điện thoại */}
                 <div className="flex rounded-xl bg-[#FAFAFA] border-solid border-[1px] border-l-4 py-4 border-l-[#f53d4f] px-4 gap-2">
                   <img src={User} alt="" className="w-[18px]" />
                   <input
-                    type="text"
+                    type="tel"
                     placeholder="Điện thoại"
                     className="bg-[#FAFAFA] focus:outline-none w-full"
+                    required
                   ></input>
                 </div>
                 {/* Mật khẩu */}
                 <div className="flex rounded-xl bg-[#FAFAFA] border-solid border-[1px] border-l-4 py-4 border-l-[#f53d4f] px-4 justify-between">
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-1">
                     <img src={Lock} alt="" />
                     <input
                       type="password"
                       placeholder="Mật khẩu"
                       className="bg-[#FAFAFA] focus:outline-none w-full"
+                      required
                     ></input>
                   </div>
                   <button>
@@ -195,12 +212,13 @@ const Signup = () => {
                 </div>
                 {/* Nhập lại mật khẩu */}
                 <div className="flex rounded-xl bg-[#FAFAFA] border-solid border-[1px] border-l-4 py-4 border-l-[#f53d4f] px-4 justify-between">
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-1">
                     <img src={Lock} alt="" />
                     <input
                       type="password"
-                      placeholder="Mật khẩu"
+                      placeholder="Nhập lại mật khẩu"
                       className="bg-[#FAFAFA] focus:outline-none w-full"
+                      required
                     ></input>
                   </div>
                   <button>
@@ -215,29 +233,62 @@ const Signup = () => {
                 </p>
                 {/* Khu vực */}
                 <div className="flex rounded-xl bg-[#FAFAFA] border-solid border-[1px] border-l-4 py-4 border-l-[#f53d4f] px-4 justify-between">
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 items-center flex-1">
                     <img src={Lock} alt="" />
                     <input
                       placeholder="Khu vực"
                       className="bg-[#FAFAFA] focus:outline-none w-full"
+                      required
                     ></input>
                   </div>
-                  <button>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="size-6"
+                  <div className="relative flex items-center">
+                    <button
+                      type="button"
+                      id="menu-button-cs"
+                      aria-haspopup="true"
+                      onClick={() => setClickKV(!clickKV)}
                     >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                      />
-                    </svg>
-                  </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class={`absolute z-10 mt-2 w-[160px] origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${
+                        clickKV ? "" : "hidden"
+                      }`}
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="menu-button-cs"
+                      tabindex="-1"
+                      style={{
+                        top: "calc(50% + 0.5rem)",
+                        transform: "translateX(-75%)",
+                      }}
+                    >
+                      <div
+                        className="py-2 flex flex-col px-2 w-[160px] h-full relative z-10"
+                        role="none"
+                      >
+                        <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                          Miền Bắc
+                        </button>
+                        <button className="w-full py-3 text-left pl-2 text-black hover:bg-[#e4e6e7] rounded hover:text-[#F53D4F]">
+                          Miền Nam
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 {/* Tên Shop */}
                 <div className="flex rounded-xl bg-[#FAFAFA] border-solid border-[1px] border-l-4 py-4 border-l-[#f53d4f] px-4 gap-2">
@@ -246,15 +297,17 @@ const Signup = () => {
                     type="text"
                     placeholder="Tên Công Ty/ Tên Shop"
                     className="bg-[#FAFAFA] focus:outline-none w-full"
+                    required
                   ></input>
                 </div>
                 {/* Email */}
                 <div className="flex rounded-xl bg-[#FAFAFA] border-solid border-[1px] py-4 px-5  gap-2">
                   <img src={User} alt="" className="w-[18px]" />
                   <input
-                    type="text"
+                    type="email"
                     placeholder="Email"
                     className="bg-[#FAFAFA] focus:outline-none w-full"
+                    required
                   ></input>
                 </div>
                 {/* Mã giới thiệu */}
@@ -269,13 +322,10 @@ const Signup = () => {
             </div>
             {/* Capcha */}
             <div className="flex flex-col place-items-center gap-4 pt-4">
-              <div className="flex justify-between w-full border-solid border-[1px] rounded-sm p-2 ">
-                <div className="flex items-center gap-2">
-                  <input type="checkbox" className="w-6 h-6" />
-                  <p>I'm not a robot</p>
-                </div>
-                <img src={Capcha} alt="" />
-              </div>
+              <ReCAPTCHA
+                sitekey="6LexHuopAAAAAH9dbXFG-dlTdLsXAqfZlRPQSHTf"
+                onChange={onChange}
+              />
               <div className="flex items-center gap-2">
                 <input type="checkbox" className="accent-[#f53d4f] w-4 h-4" />
                 <p>
@@ -290,7 +340,10 @@ const Signup = () => {
                   <span>của SuperShip</span>
                 </p>
               </div>
-              <button className="bg-gradient-to-r from-[#EF586B] to-[#D9112A] rounded-lg text-white w-[400px] py-6">
+              <button
+                type="submit"
+                className="bg-gradient-to-r from-[#EF586B] to-[#D9112A] rounded-lg text-white w-[400px] py-6"
+              >
                 TẠO TÀI KHOẢN
               </button>
             </div>
@@ -407,10 +460,13 @@ const Signup = () => {
               <img src={Tb} alt="" />
             </div>
           </div>
-          <div className="fixed bottom-12 right-6 flex flex-col gap-6">
-            <button className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center">
+          <div className="fixed bottom-12 right-6 flex flex-col gap-6 z-30">
+            <Link
+              to="/hotro"
+              className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center"
+            >
               <img src={M1} alt="" />
-            </button>
+            </Link>
             <button className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center">
               <img src={M2} alt="" />
             </button>
